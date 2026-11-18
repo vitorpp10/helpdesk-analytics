@@ -1,5 +1,17 @@
+import os
 import random
 from datetime import datetime, timedelta
+
+import psycopg
+
+with psycopg.connect(
+    host="localhost", 
+    port=55432, 
+    dbname="chamados_db",  
+    user="chamados_user", 
+    password=os.environ["POSTGRES_PASSWORD"]
+    ) as conn: 
+        print("Conexão com o banco OK")
 
 CATEGORIAS = ["hardware", "rede", "software", "acesso", "impressora"]
 PRIORIDADES = ["baixa", "media", "alta", "critica"]

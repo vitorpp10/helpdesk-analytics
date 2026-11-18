@@ -24,10 +24,18 @@ chamados-api/
 
 O `seed.py` fica separado porque gerar dados é uma responsabilidade diferente de executar a API, e não queremos que os dados sejam recriados toda vez que a aplicação iniciar.
 
+---
+
 **Colocar no `requirements.txt` e depois instalar**:
 
 ```bash
 pip install nome_modulo
 pip freeze > requirements.txt
 python3 -m pip install -r requirements.txt
+``` 
+
+**Rodar aplicação**:
+
+```bash
+python scripts/seed.py
 ``` 
